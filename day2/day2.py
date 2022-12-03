@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Advent of code 2022 - Day 1"""
+"""Advent of code 2022 - Day 2"""
 
 from typing import List, Tuple
 
@@ -47,11 +47,11 @@ def get_total_points(game_list: List[Tuple[str, str]], part: int):
         points_list = [rock_paper_scissors_game_part_2(game) for game in game_list]
     else:
         raise ValueError("Unknown part !")
-    total_points = sum(points_list)
-    print(f"Total points following the game strategy : {total_points}")
+    return sum(points_list)
 
 
-get_total_points(game_list, 1)
+print(f"Total points following the game strategy : {get_total_points(game_list, 1)}")
+
 
 # Part 2
 
@@ -84,4 +84,4 @@ def rock_paper_scissors_game_part_2(game: Tuple[str, str]):
             return 7
 
 
-get_total_points(game_list, 2)
+print(f"Total points following the game strategy : {get_total_points(game_list, 2)}")

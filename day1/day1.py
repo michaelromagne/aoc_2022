@@ -25,13 +25,16 @@ def get_strongest_elves_calories(
         raise ValueError("You should have n_elves greater than 1 !")
     sum_food_per_elve = [sum(food_elve) for food_elve in food_list]
     sorted_sum_food = sorted(sum_food_per_elve)
-    sum_strongest_elves = sum(sorted_sum_food[-n_elves:])
-    print(
-        f"Total calories for the {n_elves} strongest elve{'s' if n_elves>1 else ''} : {sum_strongest_elves}"
-    )
+    return sum(sorted_sum_food[-n_elves:])
 
 
-get_strongest_elves_calories(food_list, 1)
+print(
+    f"Total calories for the strongest elve : {get_strongest_elves_calories(food_list, 1)}"
+)
+
 
 # Part 2 - Two elves in backup
-get_strongest_elves_calories(food_list, 3)
+
+print(
+    f"Total calories for the strongest elve : {get_strongest_elves_calories(food_list, 3)}"
+)
