@@ -1,15 +1,9 @@
-#!/usr/bin/env python3
-
 """Advent of code 2022 - Day 2"""
 
-from typing import List, Tuple
+from typing import Tuple
 
-with open("game_strategy.txt", "r") as game_strategy:
-    game_strategy = game_strategy.read()
 
-game_list = [tuple(game.split(" ")) for game in game_strategy.split("\n")]
-
-# Part 1
+INPUT_DAY2 = "game_strategy.txt"
 
 
 def rock_paper_scissors_game(game: Tuple[str, str]):
@@ -37,23 +31,6 @@ def rock_paper_scissors_game(game: Tuple[str, str]):
         elif game[0] == "C":
             puntos += 3
     return puntos
-
-
-def get_total_points(game_list: List[Tuple[str, str]], part: int):
-    """Get total points following a game strategy, for part 1 or part 2."""
-    if part == 1:
-        points_list = [rock_paper_scissors_game(game) for game in game_list]
-    elif part == 2:
-        points_list = [rock_paper_scissors_game_part_2(game) for game in game_list]
-    else:
-        raise ValueError("Unknown part !")
-    return sum(points_list)
-
-
-print(f"Total points following the game strategy : {get_total_points(game_list, 1)}")
-
-
-# Part 2
 
 
 def rock_paper_scissors_game_part_2(game: Tuple[str, str]):
@@ -84,4 +61,30 @@ def rock_paper_scissors_game_part_2(game: Tuple[str, str]):
             return 7
 
 
-print(f"Total points following the game strategy : {get_total_points(game_list, 2)}")
+def get_total_points(game_strategy: str, part: int):
+    """Get total points following a game strategy, for part 1 or part 2."""
+    print(game_strategy)
+    game_list = [tuple(game.split(" ")) for game in game_strategy.split("\n")]
+    print(game_list)
+    if part == 1:
+        points_list = [rock_paper_scissors_game(game) for game in game_list]
+    elif part == 2:
+        points_list = [rock_paper_scissors_game_part_2(game) for game in game_list]
+    else:
+        raise ValueError("Unknown part !")
+    return sum(points_list)
+
+
+def main():
+    with open(INPUT_DAY2, "r") as game_strategy:
+        game_strategy = game_strategy.read()
+    print(
+        f"Total points following the game strategy : {get_total_points(game_strategy, 1)}"
+    )
+    print(
+        f"Total points following the game strategy : {get_total_points(game_strategy, 2)}"
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
