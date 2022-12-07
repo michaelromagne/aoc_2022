@@ -1,8 +1,6 @@
 """Advent of code 2022 - Day 1"""
 
-
 INPUT_DAY1 = "elves_food.txt"
-
 
 def get_strongest_elves_calories(
     elves_food: str,
