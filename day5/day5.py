@@ -44,12 +44,12 @@ def main():
 
     with open(INPUT_TXT) as f:
         file = f.read().split("\n\n")
-        n_stacks = int(file[0].split("\n")[-1][-2])
-        if len(file) != 2:
-            raise ValueError("Wrong input file format !")
-        initial_setup = get_initial_setup(file[0], n_stacks)
-        print(rearrange_crates(initial_setup.copy(), file[1], 1))
-        print(rearrange_crates(initial_setup.copy(), file[1], 2))
+    n_stacks = int(file[0].split("\n")[-1][-2])
+    if len(file) != 2:
+        raise ValueError("Wrong input file format !")
+    initial_setup = get_initial_setup(file[0], n_stacks)
+    print(rearrange_crates(initial_setup.copy(), file[1], 1))
+    print(rearrange_crates(initial_setup.copy(), file[1], 2))
 
 
 if __name__ == "__main__":

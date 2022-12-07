@@ -1,6 +1,3 @@
-"""Test day2."""
-
-
 import pytest
 
 from day2 import get_total_points

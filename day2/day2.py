@@ -63,9 +63,7 @@ def rock_paper_scissors_game_part_2(game: Tuple[str, str]):
 
 def get_total_points(game_strategy: str, part: int):
     """Get total points following a game strategy, for part 1 or part 2."""
-    print(game_strategy)
     game_list = [tuple(game.split(" ")) for game in game_strategy.split("\n")]
-    print(game_list)
     if part == 1:
         points_list = [rock_paper_scissors_game(game) for game in game_list]
     elif part == 2:

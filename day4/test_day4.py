@@ -1,5 +1,3 @@
-"""Test day4."""
-
 import pytest
 
 from day4 import count_assignement_fully_contained, count_assignement_overlap

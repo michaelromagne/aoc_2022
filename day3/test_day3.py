@@ -1,6 +1,3 @@
-"""Test day3."""
-
-
 import pytest
 
 from day3 import (

@@ -8,7 +8,6 @@ def count_assignement_fully_contained(cleaning_pairs: str):
     cleaning_pairs_string_list = [
         tuple(pair.split(",")) for pair in cleaning_pairs.split("\n")
     ]
-    print(cleaning_pairs_string_list)
     cleaning_pairs_list = [
         (left.split("-"), right.split("-"))
         for left, right in cleaning_pairs_string_list

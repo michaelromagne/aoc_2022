@@ -1,5 +1,3 @@
-"""Test day5."""
-
 import pytest
 
 from day5 import get_initial_setup, rearrange_crates

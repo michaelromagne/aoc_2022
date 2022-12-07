@@ -1,4 +1,3 @@
-"""Test day1."""
 import pytest
 
 from day1 import get_strongest_elves_calories
