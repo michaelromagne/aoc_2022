@@ -1,4 +1,4 @@
-"""Advent of code 2022 - Day 9"""
+"""Advent of code 2022 - Day 10"""
 import os
 from typing import List
 
