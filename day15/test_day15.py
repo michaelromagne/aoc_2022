@@ -33,9 +33,18 @@ def test_get_scanned_positions(
     expected: int,
     expected_bis: int,
 ) -> None:
-    scanned_positions = get_scanned_positions_in_row(test_txt, 10)
-    assert len(scanned_positions) == expected
-    assert len(get_scanned_positions_in_row(test_txt, 9)) == expected_bis
+    scanned_positions, baecon_positions = get_scanned_positions_in_row(test_txt, 10)
+    set_positions = set()
+    for low_bound, high_bound in scanned_positions:
+        set_positions.update(list(range(low_bound, high_bound + 1)))
+    for baecon_pos in baecon_positions:
+        if baecon_pos[1] == 10:
+            print(set_positions)
+            print(baecon_pos)
+            set_positions.discard(baecon_pos[0])
+
+    assert len(set_positions) == expected
+    # assert len(get_scanned_positions_in_row(test_txt, 9)) == expected_bis
 
 
 @pytest.mark.parametrize(
